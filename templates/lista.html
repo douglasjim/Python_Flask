@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block conteudo %}
+        <table class="table table-striped table-responsive table-bordered">
+            <thead class="thead-default">
+                <tr>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Console</th>
+                </tr>
+            </thead>
+            <tbody>
+            {%for jogo in jogos%} <!--Assim conseguimos mostrar os dados que esta em uma lista que criamos la em jogoteca -->
+                <tr>
+                    <td>{{ jogo.nome }}</td> <!--extraindo o valor que esta dentro do objetic-->
+                    <td>{{ jogo.categoria }}</td>
+                    <td>{{ jogo.console }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
+    </div>
+        <!--
+        {% if lista2 %} Assim conseuimos printar os valores que estao dentro da lista
+            <p>Existe o seguintes itens: {{ lista2 }}</p>
+        {% else %}
+            <p>Não ha itens</p>
+        {% endif %}
+        -->
+  </body>
+</html>
