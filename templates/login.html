@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jogoteca</title>
+      <!--Aqui estamos dizendo o caminho do arquivo css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
   </head>
   <body>
     <div class="container">
+        <!-- -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul id="messages" class="list-unstyled">
@@ -19,7 +21,9 @@
         {% endwith %}
 
         <h1>Faça seu login</h1>
+        <!-- -->
         <form method="POST" action="{{ url_for('autenticar') }}">
+            <!-- -->
             <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
             <p><label>Nome de usuário:</label> <input class="form-control" type="text" name="usuario" required></p>
             <p><label>Senha:</label> <input class="form-control" type="password" name="senha" required></p>

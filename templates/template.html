@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jogoteca</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}"> <!-- Assim conseguimos dizer onde esta nosso codigo css usando flask   -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='gostar.svg') }}">
 </head>
 <body>
     <div class="container">
-    <!--Este codigo de baixo serve para mostrar uma mensagem que denifimos la no arquivo inicial -->
+    <!--Este codigo de baixo serve para mostrar uma mensagem que definimos la no arquivo inicial -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul id="messages" class="list-unstyled">
@@ -27,6 +28,27 @@
         {% block conteudo %}{% endblock %}
         <!-- E essa frase que esta escrito apos o block seria meio que um ID para identificar as tags acima  -->
 
+        <div></div>
+
+
+<!--        <button onclick="dislike()">DISLIKE</button>-->
+<!--        <p id="show2"></p>-->
+
     </div>
+
+<script>
+    var likes = 1;
+    var dislike = 0;
+
+    function like(){
+        document.getElementById("show").innerHTML = likes;
+        likes = likes + 1;
+    }
+
+    function dislike(){
+        document.getElementById("show2").innerHTML = dislike;
+        dislike = dislike + 1;
+    }
+</script>
 </body>
 </html>
